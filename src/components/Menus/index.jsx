@@ -9,12 +9,12 @@ const Menus = [
   {
     'name': 'Food',
     'icon': <FoodIcon/>,
-    'url': '/food'
+    'url': '/food?menu=beef'
   },
   {
     'name': 'Drink',
     'icon': <DrinkIcon/>,
-    'url': '/drink'
+    'url': '/drink?menu=Ordinary_Drink'
   },
   {
     'name': 'History',
