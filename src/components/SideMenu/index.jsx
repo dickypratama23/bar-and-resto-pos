@@ -20,7 +20,7 @@ const SideMenu = () => {
               return (
                 <Link
                   key={index}
-                  className={`flex flex-col items-center text-[#242424] hover:text-slate-700 p-2 font-bold ${pathname === menu.url ? 'bg-[#EDDBC0]' : 'hover:bg-[#EDDBC0]'} rounded-xl cursor-pointer`}
+                  className={`flex flex-col items-center text-[#242424] hover:text-slate-700 p-2 font-bold ${pathname === menu.url.split('?')[0] ? 'bg-[#EDDBC0]' : 'hover:bg-[#EDDBC0]'} rounded-xl cursor-pointer`}
                   to={menu.url}
                 >
                   <div className="icon">
