@@ -28,7 +28,7 @@ const Food = () => {
 
       <div className="px-10 grid grid-flow-col auto-cols-max gap-2 ">
         {
-          categories.categories && categories.categories.map((category, index) => {
+          categories && categories.map((category, index) => {
             return (
               <Category key={index} category={category} />
             )
