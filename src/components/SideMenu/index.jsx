@@ -1,7 +1,7 @@
 import logo from '../../assets/logo.png'
 import Menus from '../Menus/index.jsx'
 import { CloseIcon } from '../Icon/index.jsx'
-import { useLocation, useNavigate } from 'react-router-dom'
+import { Link, useLocation, useNavigate } from 'react-router-dom'
 
 const SideMenu = () => {
   let navigate = useNavigate()
@@ -18,10 +18,10 @@ const SideMenu = () => {
           {
             Menus.map((menu, index) => {
               return (
-                <div
+                <Link
                   key={index}
-                  className={`flex flex-col items-center p-2 font-bold ${pathname === menu.url ? 'bg-[#EDDBC0]' : 'hover:bg-[#EDDBC0]'} rounded-xl cursor-pointer`}
-                  onClick={() => navigate(menu.url)}
+                  className={`flex flex-col items-center text-[#242424] hover:text-slate-700 p-2 font-bold ${pathname === menu.url ? 'bg-[#EDDBC0]' : 'hover:bg-[#EDDBC0]'} rounded-xl cursor-pointer`}
+                  to={menu.url}
                 >
                   <div className="icon">
                     {menu.icon}
@@ -29,7 +29,7 @@ const SideMenu = () => {
                   <div className="label text-sm mt-1">
                     {menu.name}
                   </div>
-                </div>
+                </Link>
               )
             })
           }
