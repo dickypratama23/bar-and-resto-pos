@@ -27,7 +27,7 @@ const Bill = () => {
           <div className="text-xl font-bold">Payment Methods</div>
           <div className="grid grid-cols-3 gap-4 w-full mt-8">
             <div
-              className="p-5 flex flex-col rounded-xl justify-center items-center bg-[#EDDBC0] cursor-pointer border-2 hover:border-amber-300 hover:text-purple-900">
+              className="p-5 flex flex-col rounded-xl justify-center items-center bg-[#FEFBF6] cursor-pointer border-2 border-[#FEFBF6] hover:border-[#EDDBC0] hover:text-purple-900">
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5"
                    stroke="currentColor" className="w-12 h-12">
                 <path strokeLinecap="round" strokeLinejoin="round"
@@ -36,7 +36,7 @@ const Bill = () => {
               <span className="text-xs font-bold mt-1">Cash</span>
             </div>
             <div
-              className="p-5 flex flex-col rounded-xl justify-center items-center bg-[#EDDBC0] cursor-pointer border-2 hover:border-amber-300 hover:text-purple-900">
+              className="p-5 flex flex-col rounded-xl justify-center items-center bg-[#FEFBF6] cursor-pointer border-2 border-[#FEFBF6] hover:border-[#EDDBC0] hover:text-purple-900">
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5"
                    stroke="currentColor" className="w-12 h-12">
                 <path strokeLinecap="round" strokeLinejoin="round"
@@ -45,7 +45,7 @@ const Bill = () => {
               <span className="text-xs font-bold mt-1">Debit Card</span>
             </div>
             <div
-              className="p-5 flex flex-col rounded-xl justify-center items-center bg-[#EDDBC0] cursor-pointer border-2 hover:border-amber-300 hover:text-purple-900">
+              className="p-5 flex flex-col rounded-xl justify-center items-center bg-[#FEFBF6] cursor-pointer border-2 border-[#FEFBF6] hover:border-[#EDDBC0] hover:text-purple-900">
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5"
                    stroke="currentColor" className="w-12 h-12">
                 <path strokeLinecap="round" strokeLinejoin="round"
@@ -57,7 +57,7 @@ const Bill = () => {
             </div>
           </div>
           <div className="mt-5">
-            <button className="bg-yellow-900 hover:bg-yellow-800 py-4 rounded-md text-white font-bold w-full"
+            <button className="bg-[#EDDBC0] hover:border-[#EDDBC0] border-2 hover:border-2 hover:bg-[#FEFBF6] py-4 rounded-md text-[#242424] font-bold w-full"
                     type="submit">
               Print Bills
             </button>
