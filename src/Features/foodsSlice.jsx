@@ -11,7 +11,7 @@ const initialStateFoods = {
 
 export const getCategories = createAsyncThunk('getCategories', async () => {
   const response = await FoodApiInstance.get('/categories.php')
-  return response.data
+  return response.data.categories
 })
 
 const foodsSlice = createSlice({
