@@ -9,7 +9,7 @@ const Menus = [
   {
     'name': 'Food',
     'icon': <FoodIcon/>,
-    'url': '/food?menu=beef'
+    'url': '/food?menu=Beef'
   },
   {
     'name': 'Drink',
