@@ -40,7 +40,7 @@ const Food = () => {
         }
       </div>
 
-      <div className="px-10 py-10 text-2xl font-bold capitalize">{ menu.replace('_', '') } Menu</div>
+      <div className="px-10 py-10 text-2xl font-bold capitalize">{ menu.replaceAll('_', ' ') } Menu</div>
     </div>
   )
 }
