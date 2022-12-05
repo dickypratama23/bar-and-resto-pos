@@ -19,20 +19,18 @@ const Food = () => {
   }, []);
 
   useEffect(() => {
-    dispatch(getFoods({ menu }))
+    dispatch(getFoods({menu}))
   }, [menu]);
 
-
   return (
-    <div className="w-9/12 bg-[#FEFBF6]">
-      <div className="flex justify-between items-center">
-        <div className="px-10 py-10 text-2xl font-bold">Choose Category</div>
-        <div className="px-10 py-10">
+    <div className="w-9/12 bg-[#FEFBF6] grid grid-flow-row auto-rows-max">
+      <div className="flex justify-between items-center py-10 h-fit">
+        <div className="px-10 text-2xl font-bold">Choose Category</div>
+        <div className="px-10">
           <Search/>
         </div>
       </div>
-
-      <div className="px-10 grid grid-cols-12 gap-2 ">
+      <div className="px-10 flex gap-2 h-fit scrollbar-hide overflow-x-auto">
         {
           categories && categories.map((category, index) => {
             return (
@@ -41,21 +39,18 @@ const Food = () => {
           })
         }
       </div>
-
-      <div className="px-10 py-10 text-2xl font-bold capitalize">{menu} Menu</div>
-
-      <div className="px-10">
+      <div className="px-10 py-5 text-2xl font-bold capitalize h-fit">{menu} Menu</div>
+      <div className="px-10 scrollbar-hide overflow-y-auto h-[690px]">
         <div className="grid grid-cols-3 gap-4">
           {
             meals && meals.map((meal, index) => {
               return (
-                <FoodMenuCard key={index} meal={meal} />
+                <FoodMenuCard key={index} meal={meal}/>
               )
             })
           }
         </div>
       </div>
-
     </div>
   )
 }

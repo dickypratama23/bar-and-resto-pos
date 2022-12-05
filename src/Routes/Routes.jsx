@@ -10,7 +10,7 @@ import { Drink, Food, History, Home, Promo, Setting, Wallet } from '../Pages/ind
 
 const Routes = () => {
   return (
-    <div className="flex w-screen h-screen">
+    <div className="flex w-screen max-h-screen">
       <SideMenu/>
       <Switch>
         <Route exact path="/" element={<Home/>}/>
