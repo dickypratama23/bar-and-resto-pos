@@ -14,6 +14,11 @@ export const getDrinkCategories = createAsyncThunk('getDrinkCategories', async (
   return response.data.drinks
 })
 
+export const getDrinks = createAsyncThunk('getFoods', async ({menu}) => {
+  const response = await DrinkApiInstance.get(`/filter.php?c=${menu}`)
+  return response.data.drinks
+})
+
 const drinksSlice = createSlice({
   name: 'drinks',
   initialState: initialStateDrinks,
@@ -27,6 +32,18 @@ const drinksSlice = createSlice({
         state.categories = action.payload
       })
       .addCase(getDrinkCategories.rejected, (state, action) => {
+        state.loading = false
+        state.error = action.payload
+      })
+
+      .addCase(getDrinks.pending, (state) => {
+        state.loading = true
+      })
+      .addCase(getDrinks.fulfilled, (state, action) => {
+        state.loading = false
+        state.drinks = action.payload
+      })
+      .addCase(getDrinks.rejected, (state, action) => {
         state.loading = false
         state.error = action.payload
       })

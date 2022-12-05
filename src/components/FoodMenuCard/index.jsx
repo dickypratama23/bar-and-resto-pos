@@ -1,5 +1,3 @@
-import { useState } from 'react'
-
 const FoodMenuCard = ({meal}) => {
   const {strMeal, strMealThumb, idMeal} = meal
 
