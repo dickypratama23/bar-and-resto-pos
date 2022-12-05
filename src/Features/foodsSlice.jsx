@@ -5,13 +5,18 @@ const initialStateFoods = {
   loading: false,
   error: null,
   categories: [],
-  foods: [],
+  meals: [],
   search: []
 }
 
 export const getCategories = createAsyncThunk('getCategories', async () => {
   const response = await FoodApiInstance.get('/categories.php')
   return response.data.categories
+})
+
+export const getFoods = createAsyncThunk('getFoods', async ({menu}) => {
+  const response = await FoodApiInstance.get(`/filter.php?c=${menu}`)
+  return response.data.meals
 })
 
 const foodsSlice = createSlice({
@@ -27,6 +32,18 @@ const foodsSlice = createSlice({
         state.categories = action.payload
       })
       .addCase(getCategories.rejected, (state, action) => {
+        state.loading = false
+        state.error = action.payload
+      })
+
+      .addCase(getFoods.pending, (state) => {
+        state.loading = true
+      })
+      .addCase(getFoods.fulfilled, (state, action) => {
+        state.loading = false
+        state.meals = action.payload
+      })
+      .addCase(getFoods.rejected, (state, action) => {
         state.loading = false
         state.error = action.payload
       })
