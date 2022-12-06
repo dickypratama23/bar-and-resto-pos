@@ -7,5 +7,9 @@ import PromoIcon from './PromoIcon.jsx'
 import SettingIcon from './SettingIcon.jsx'
 import OpenIcon from './OpenIcon.jsx'
 import CloseIcon from './CloseIcon.jsx'
+import AddPersonIcon from './AddPersonIcon.jsx'
+import ProductIcon from './ProductIcon.jsx'
+import OrderIcon from './OrderIcon.jsx'
+import SalesIcon from './SalesIcon.jsx'
 
-export { HomeIcon, FoodIcon, DrinkIcon, HistoryIcon, WalletIcon, PromoIcon, SettingIcon, OpenIcon, CloseIcon }
+export { HomeIcon, FoodIcon, DrinkIcon, HistoryIcon, WalletIcon, PromoIcon, SettingIcon, OpenIcon, CloseIcon, OrderIcon, SalesIcon, ProductIcon, AddPersonIcon }
