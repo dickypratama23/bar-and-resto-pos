@@ -21,7 +21,6 @@ const Routes = () => {
         <Route exact path="/promo" element={<Promo/>}/>
         <Route exact path="/setting" element={<Setting/>}/>
       </Switch>
-      <Bill/>
     </div>
   )
 }
