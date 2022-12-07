@@ -9,10 +9,10 @@ export const drinkApiSlice = createApi({
     fetchDrinkCategories: build.query({
       query: () => 'list.php?c=list'
     }),
-    searchDrinks: build.query({
+    fetchFilterDrinks: build.query({
       query: (menu) => `filter.php?c=${menu}`
     })
   })
 })
 
-export const {useFetchDrinkCategoriesQuery, useSearchDrinksQuery} = drinkApiSlice
+export const {useFetchDrinkCategoriesQuery, useFetchFilterDrinksQuery} = drinkApiSlice

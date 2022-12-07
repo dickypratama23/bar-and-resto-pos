@@ -1,4 +1,4 @@
-import { useFetchDrinkCategoriesQuery, useSearchDrinksQuery } from '../../features/drinks/drinkApiSlice.jsx'
+import { useFetchDrinkCategoriesQuery, useFetchFilterDrinksQuery } from '../../features/drinks/drinkApiSlice.jsx'
 import { useSearchParams } from 'react-router-dom'
 
 import Search from '../../components/Search'
@@ -11,7 +11,7 @@ const Drink = () => {
   const menu = searchParams.get('menu')
 
   const { data: categories } = useFetchDrinkCategoriesQuery()
-  const { data: drinks } = useSearchDrinksQuery(menu)
+  const { data: filters } = useFetchFilterDrinksQuery(menu)
 
   return (
     <>
@@ -24,7 +24,7 @@ const Drink = () => {
         </div>
         <div className="px-10 flex gap-2 h-fit scrollbar-hide overflow-x-auto">
           {
-            categories?.drinks.map((category, index) => {
+            categories && categories.drinks.map((category, index) => {
               return (
                 <Category key={index} category={category}/>
               )
@@ -35,7 +35,7 @@ const Drink = () => {
         <div className="px-10 scrollbar-hide overflow-y-auto h-[690px]">
           <div className="grid grid-cols-4 gap-4">
             {
-              drinks?.drinks.map((drink, index) => {
+              filters && filters.drinks.map((drink, index) => {
                 return (
                   <DrinkMenuCard key={index} drink={drink}/>
                 )
