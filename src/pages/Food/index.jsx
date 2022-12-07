@@ -1,7 +1,5 @@
-import { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { getCategories, getFoods } from '../../Features/foodsSlice.jsx'
-import { useSearchParams } from 'react-router-dom'
+import {useFetchFoodCategoriesQuery, useSearchFoodsQuery} from "../../features/foods/foodApiSlice.jsx";
+import {useSearchParams} from 'react-router-dom'
 
 import Search from '../../components/Search'
 import Category from '../../components/Category/index.jsx'
@@ -12,16 +10,8 @@ const Food = () => {
   const [searchParams] = useSearchParams()
   const menu = searchParams.get('menu')
 
-  const dispatch = useDispatch()
-  const {categories, meals} = useSelector((state) => ({...state.foods}))
-
-  useEffect(() => {
-    dispatch(getCategories())
-  }, []);
-
-  useEffect(() => {
-    dispatch(getFoods({menu}))
-  }, [menu]);
+  const { data: categories } = useFetchFoodCategoriesQuery()
+  const { data: meals } = useSearchFoodsQuery(menu)
 
   return (
     <>
@@ -34,7 +24,7 @@ const Food = () => {
         </div>
         <div className="px-10 flex gap-2 h-fit scrollbar-hide overflow-x-auto">
           {
-            categories && categories.map((category, index) => {
+            categories?.categories.map((category, index) => {
               return (
                 <Category key={index} category={category}/>
               )
@@ -45,7 +35,7 @@ const Food = () => {
         <div className="px-10 scrollbar-hide overflow-y-auto h-[690px]">
           <div className="grid grid-cols-3 gap-4">
             {
-              meals && meals.map((meal, index) => {
+              meals?.meals.map((meal, index) => {
                 return (
                   <FoodMenuCard key={index} meal={meal}/>
                 )
@@ -54,7 +44,7 @@ const Food = () => {
           </div>
         </div>
       </div>
-      <Bill />
+      <Bill/>
     </>
   )
 }

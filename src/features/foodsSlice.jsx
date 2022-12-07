@@ -1,5 +1,5 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
-import { FoodApiInstance } from '../Apis/ApiInstance.jsx'
+import { FoodApiInstance } from '../apis/ApiInstance.jsx'
 
 const initialStateFoods = {
   loading: false,
