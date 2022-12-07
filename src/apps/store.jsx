@@ -1,14 +1,14 @@
-import { configureStore } from '@reduxjs/toolkit'
-import { drinkApiSlice } from '../features/drinks/drinkApiSlice.jsx'
-
-import FoodsSlice from '../features/foodsSlice.jsx'
+import {configureStore} from '@reduxjs/toolkit'
+import {drinkApiSlice} from '../features/drinks/drinkApiSlice.jsx'
+import {foodApiSlice} from "../features/foods/foodApiSlice.jsx";
 
 export default configureStore({
   reducer: {
-    foods: FoodsSlice,
+    [foodApiSlice.reducerPath]: foodApiSlice.reducer,
     [drinkApiSlice.reducerPath]: drinkApiSlice.reducer
   },
-  middleware: (getDefaultMiddleware) => {
-    return getDefaultMiddleware({serializableCheck: false}).concat(drinkApiSlice.middleware)
-  }
+  middleware: (getDefaultMiddleware) => getDefaultMiddleware({serializableCheck: false}).concat([
+    foodApiSlice.middleware,
+    drinkApiSlice.middleware
+  ])
 })
