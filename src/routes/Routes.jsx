@@ -6,7 +6,7 @@ import {
 } from 'react-router-dom';
 
 import Bill from '../components/Bill/index.jsx'
-import { Drink, Food, History, Home, Promo, Setting, Wallet } from '../Pages/index.jsx'
+import { Drink, Food, History, Home, Promo, Setting, Wallet } from '../pages/index.jsx'
 
 const Routes = () => {
   return (
