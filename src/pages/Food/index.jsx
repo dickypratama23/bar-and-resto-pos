@@ -35,7 +35,7 @@ const Food = () => {
         <div className="px-10 scrollbar-hide overflow-y-auto h-[690px]">
           <div className="grid grid-cols-3 gap-4">
             {
-              meals && meals.map((meal, index) => {
+              meals?.meals.map((meal, index) => {
                 return (
                   <FoodMenuCard key={index} meal={meal}/>
                 )
