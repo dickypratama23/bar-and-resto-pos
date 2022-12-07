@@ -1,4 +1,4 @@
-import {useFetchFoodCategoriesQuery, useSearchFoodsQuery} from "../../features/foods/foodApiSlice.jsx";
+import {useFetchFoodCategoriesQuery, useFilterFoodsQuery} from "../../features/foods/foodApiSlice.jsx";
 import {useSearchParams} from 'react-router-dom'
 
 import Search from '../../components/Search'
@@ -11,7 +11,7 @@ const Food = () => {
   const menu = searchParams.get('menu')
 
   const { data: categories } = useFetchFoodCategoriesQuery()
-  const { data: meals } = useSearchFoodsQuery(menu)
+  const { data: filters } = useFilterFoodsQuery(menu)
 
   return (
     <>
@@ -24,7 +24,7 @@ const Food = () => {
         </div>
         <div className="px-10 flex gap-2 h-fit scrollbar-hide overflow-x-auto">
           {
-            categories?.categories.map((category, index) => {
+            categories && categories.categories.map((category, index) => {
               return (
                 <Category key={index} category={category}/>
               )
@@ -35,7 +35,7 @@ const Food = () => {
         <div className="px-10 scrollbar-hide overflow-y-auto h-[690px]">
           <div className="grid grid-cols-3 gap-4">
             {
-              meals?.meals.map((meal, index) => {
+              filters && filters.meals.map((meal, index) => {
                 return (
                   <FoodMenuCard key={index} meal={meal}/>
                 )
