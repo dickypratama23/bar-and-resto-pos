@@ -1,4 +1,4 @@
-import Routes from './Routes/Routes.jsx'
+import Routes from './routes/Routes.jsx'
 import { BrowserRouter } from 'react-router-dom'
 
 function App() {
