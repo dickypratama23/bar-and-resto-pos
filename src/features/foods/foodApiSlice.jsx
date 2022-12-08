@@ -11,8 +11,15 @@ export const foodApiSlice = createApi({
     }),
     filterFoods: build.query({
       query: (menu) => `filter.php?c=${menu}`
+    }),
+    searchFoods: build.query({
+      query: (s) => `search.php?s=${s}`
     })
   })
 })
 
-export const {useFetchFoodCategoriesQuery, useFilterFoodsQuery} = foodApiSlice
+export const {
+  useFetchFoodCategoriesQuery,
+  useFilterFoodsQuery,
+  useSearchFoodsQuery
+} = foodApiSlice
