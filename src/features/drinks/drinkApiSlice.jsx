@@ -1,4 +1,4 @@
-import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
+import {createApi, fetchBaseQuery} from '@reduxjs/toolkit/query/react'
 
 export const drinkApiSlice = createApi({
   reducerPath: 'apiDrink',
@@ -11,8 +11,15 @@ export const drinkApiSlice = createApi({
     }),
     filterDrinks: build.query({
       query: (menu) => `filter.php?c=${menu}`
+    }),
+    searchDrinks: build.query({
+      query: (s) => `search.php?s=${s}`
     })
   })
 })
 
-export const {useFetchDrinkCategoriesQuery, useFilterDrinksQuery} = drinkApiSlice
+export const {
+  useFetchDrinkCategoriesQuery,
+  useFilterDrinksQuery,
+  useSearchDrinksQuery
+} = drinkApiSlice
