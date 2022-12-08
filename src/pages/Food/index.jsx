@@ -13,7 +13,6 @@ import Loading from "../../components/Loading/index.jsx";
 const Food = () => {
   const [loading, setLoading] = useState(false);
   const [status, setStatus] = useState(false);
-  const [search, setSearch] = useState('');
 
   const [searchParams, setSearchParams] = useSearchParams()
   const menu = searchParams.get('menu')
